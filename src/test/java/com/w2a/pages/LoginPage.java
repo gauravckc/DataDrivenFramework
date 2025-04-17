@@ -19,5 +19,5 @@ public class LoginPage  {
 	public void Select_bankManager() {
 		BtnBankManagerLogin.click();
 	}
-
+	//{}
 }
