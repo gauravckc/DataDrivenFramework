@@ -21,8 +21,8 @@ public class TestCases extends TestBase {
 		addcustpage = new AddCustomerPage(driver);
 		loginpage.Select_bankManager();
 		Assert.assertTrue(addcustpage.BtnAddCustomer.isDisplayed());	
-
 	}
+
 	@Test(priority=1)
 	public void EnterAddCustomerDetails() throws Exception {
 		loginpage = new LoginPage(driver);
