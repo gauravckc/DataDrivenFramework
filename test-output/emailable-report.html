@@ -8,12 +8,31 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Data Driven Basics</th></tr>
-<tr><td><a href="#t0">LoginTest</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">32,263</td><td></td><td></td></tr>
+<tr><th colspan="8">Failed suite [Data Driven Basics]</th></tr>
+<tr><td><a href="#t0">LoginTest(failed)</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">11,813</td><td>Sanity</td><td>Regressionss</td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Data Driven Basics</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.w2a.testcases.TestCases</td><td><a href="#m0">EnterAddCustomerDetails</a></td><td rowspan="1">1744860674022</td><td rowspan="1">7434</td></tr><tr class="passedeven"><td><a href="#m1">LoginAsBankManager</a></td><td rowspan="1">1744860659680</td><td rowspan="1">2753</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Failed suite [Data Driven Basics]</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTest(failed) &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.w2a.testcases.TestCases</td><td><a href="#m0">EnterAddCustomerDetails_failed</a></td><td rowspan="1">1746619642992</td><td rowspan="1">2779</td></tr></tbody>
 </table>
-<h2>LoginTest</h2><h3 id="m0">com.w2a.testcases.TestCases#EnterAddCustomerDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.w2a.testcases.TestCases#LoginAsBankManager</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>LoginTest(failed)</h2><h3 id="m0">com.w2a.testcases.TestCases#EnterAddCustomerDetails_failed</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=135.0.7049.116)
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;13.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d26e1deb0889c5ee77b2b47612b4fb41, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.116, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\ekagra\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63171}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63171/devtoo..., se:cdpVersion: 135.0.7049.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d26e1deb0889c5ee77b2b47612b4fb41
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:680)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:684)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1252)
+	at com.w2a.testcases.TestCases.EnterAddCustomerDetails_failed(TestCases.java:51)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
