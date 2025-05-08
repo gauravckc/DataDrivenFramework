@@ -38,16 +38,11 @@ import java.util.ResourceBundle;
 
 public class TestBase {
 
-	/*
-	 * WebDriver Properties Logs ExtentReports DB Excel Mail
-	 * 
-	 */
-
 	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
-	
+
 	@BeforeMethod (groups = { "Smoke", "Sanity", "Regression" })
 	public void setUp() throws Exception {
 		if (driver == null) {
@@ -59,27 +54,27 @@ public class TestBase {
 			OR.load(fis);
 		}
 		if (config.getProperty("execution_env").equalsIgnoreCase("local")) {
-		if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup(); 
-			ChromeOptions options =  new ChromeOptions();
-			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-//			options.addArguments("headless");    //adding headless chrome property
-			driver = new ChromeDriver(options);
-		} else if (config.getProperty("browser").equalsIgnoreCase("ie")) {
-			WebDriverManager.iedriver().setup(); 
-			driver = new InternetExplorerDriver();
+			if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
+				WebDriverManager.chromedriver().setup(); 
+				ChromeOptions options =  new ChromeOptions();
+				options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+				//			options.addArguments("headless");    //adding headless chrome property
+				driver = new ChromeDriver(options);
+			} else if (config.getProperty("browser").equalsIgnoreCase("ie")) {
+				WebDriverManager.iedriver().setup(); 
+				driver = new InternetExplorerDriver();
+			}
 		}
-	}
-	    if (config.getProperty("execution_env").equalsIgnoreCase("remote")) {
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setPlatform(Platform.WIN11);
-		if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
-			capabilities.setBrowserName("chrome");
-		}
+		if (config.getProperty("execution_env").equalsIgnoreCase("remote")) {
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setPlatform(Platform.WIN11);
+			if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
+				capabilities.setBrowserName("chrome");
+			}
 
-		driver = new RemoteWebDriver(new URL("http://192.168.1.8:4444"),capabilities);
-		
-	}
+			driver = new RemoteWebDriver(new URL("http://192.168.1.8:4444"),capabilities);
+
+		}
 		driver.get(config.getProperty("testsiteurl"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
@@ -87,10 +82,10 @@ public class TestBase {
 	}
 
 	public boolean isElementPresent(WebElement ele) {
-		
-//			driver.findElement((By) ele);
 
-		
+		//			driver.findElement((By) ele);
+
+
 		if (ele.isDisplayed()) {
 			return true;
 		} else {
@@ -101,7 +96,7 @@ public class TestBase {
 
 	public boolean waitForElementVisible(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By) (element)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By) (element)));
 		return true;
 	}
 
@@ -111,7 +106,7 @@ public class TestBase {
 			driver.quit();
 		}
 	}
-	
+
 	public String captureScreen(String tname) throws IOException {
 
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
