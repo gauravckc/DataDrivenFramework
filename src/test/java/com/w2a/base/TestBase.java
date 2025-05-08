@@ -60,16 +60,13 @@ public class TestBase {
 		}
 		if (config.getProperty("execution_env").equalsIgnoreCase("local")) {
 		if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
-//			System.setProperty("webdriver.chrome.driver",
-//					System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
-			WebDriverManager.chromedriver().setup(); // Using WebDriverManager
+			WebDriverManager.chromedriver().setup(); 
 			ChromeOptions options =  new ChromeOptions();
 			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//			options.addArguments("headless");    //adding headless chrome property
 			driver = new ChromeDriver(options);
 		} else if (config.getProperty("browser").equalsIgnoreCase("ie")) {
-//			System.setProperty("webdriver.ie.driver",
-//					System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
-			WebDriverManager.iedriver().setup(); // Using WebDriverManager
+			WebDriverManager.iedriver().setup(); 
 			driver = new InternetExplorerDriver();
 		}
 	}
