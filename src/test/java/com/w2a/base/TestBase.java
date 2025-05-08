@@ -16,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -31,6 +32,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -61,7 +63,9 @@ public class TestBase {
 //			System.setProperty("webdriver.chrome.driver",
 //					System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
 			WebDriverManager.chromedriver().setup(); // Using WebDriverManager
-			driver = new ChromeDriver();
+			ChromeOptions options =  new ChromeOptions();
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			driver = new ChromeDriver(options);
 		} else if (config.getProperty("browser").equalsIgnoreCase("ie")) {
 //			System.setProperty("webdriver.ie.driver",
 //					System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\IEDriverServer.exe");
