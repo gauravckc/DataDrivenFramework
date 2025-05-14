@@ -71,14 +71,12 @@ public class TestBase {
 			if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
 				capabilities.setBrowserName("chrome");
 			}
-
-			driver = new RemoteWebDriver(new URL("http://192.168.1.8:4444"),capabilities);
-
+			
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/"),capabilities);
 		}
 		driver.get(config.getProperty("testsiteurl"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
-				TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(config.getProperty("implicit.wait"))));
 	}
 
 	public boolean isElementPresent(WebElement ele) {
