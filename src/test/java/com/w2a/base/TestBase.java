@@ -34,6 +34,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class TestBase {
@@ -71,8 +73,23 @@ public class TestBase {
 			if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
 				capabilities.setBrowserName("chrome");
 			}
-			
+
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/"),capabilities);
+		}
+		
+		if (config.getProperty("execution_env").equalsIgnoreCase("mobile")) {
+			if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
+				Map<String,String> mobileEm = new HashMap<String,String>();
+				mobileEm.put("deviceName", "iPhone X");
+				WebDriverManager.chromedriver().setup();
+				ChromeOptions options =  new ChromeOptions();
+				options.setExperimentalOption("mobileEmulation", mobileEm);
+				
+				driver = new ChromeDriver(options);
+			} else if (config.getProperty("browser").equalsIgnoreCase("ie")) {
+				WebDriverManager.iedriver().setup(); 
+				driver = new InternetExplorerDriver();
+			}
 		}
 		driver.get(config.getProperty("testsiteurl"));
 		driver.manage().window().maximize();
