@@ -10,6 +10,7 @@ import com.w2a.utilities.GetAILocater;
 
 public class LoginPage  {
 	WebDriver driver;
+	//gaurav
 	//public String dmeo = "div> div:nth-child(5) >[class='btn btn-primary btn-lg']";
 //	GetAILocater getailocater = new GetAILocater();
 //	public String demo = getailocater.getAIEnhancedXPath("Bank Manager Login");
