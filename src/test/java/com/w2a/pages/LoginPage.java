@@ -14,6 +14,10 @@ public class LoginPage  {
 	//public String dmeo = "div> div:nth-child(5) >[class='btn btn-primary btn-lg']";
 //	GetAILocater getailocater = new GetAILocater();
 //	public String demo = getailocater.getAIEnhancedXPath("Bank Manager Login");
+	//gaurav
+	//public String dmeo = "div> div:nth-child(5) >[class='btn btn-primary btn-lg']";
+//	GetAILocater getailocater = new GetAILocater();
+//	public String demo = getailocater.getAIEnhancedXPath("Bank Manager Login");
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
