@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class AddCustomerPage {
 	WebDriver driver;
 
-	//new code
+	//master change
 	public AddCustomerPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
