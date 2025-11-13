@@ -14,7 +14,7 @@ public class AddCustomerPage {
 	}
 
 	@FindBy(css = "button[ng-click='addCust()']")
-	public WebElement BtnAddCustomer;
+	public WebElement BtnAddCustomers;
 
 	@FindBy(css = "[ng-model='fName']")
 	public WebElement TxtBoxFirstName; 
